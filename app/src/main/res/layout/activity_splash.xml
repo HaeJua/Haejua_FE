@@ -9,7 +9,7 @@
         android:id="@+id/ferris_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/Ferris_icon"
+        android:src="@drawable/ferris_icon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/app_name" />

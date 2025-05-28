@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:title="행사 정보"
+        android:icon="@drawable/ferris_icon"/>
+    <item
+        android:id="@+id/search"
+        android:enabled="true"
+        android:icon="@drawable/search_icon"
+        android:title="검색"/>
+    <item
+        android:id="@+id/favorite"
+        android:enabled="true"
+        android:icon="@drawable/star_icon"
+        android:title="즐겨찾기"/>
+    <item
+        android:id="@+id/scedule"
+        android:enabled="true"
+        android:icon="@drawable/scedule_icon"
+        android:title="일정"/>
+    <item
+        android:id="@+id/profile"
+        android:enabled="true"
+        android:icon="@drawable/profile_icon"
+        android:title="내정보"/>
+</menu>

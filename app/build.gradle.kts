@@ -33,6 +33,9 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    viewBinding {
+        enable = true
+    }
 }
 
 dependencies {
@@ -45,4 +48,30 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Kotlin
+    implementation(libs.navigation.fragment.ktx)
+    implementation(libs.navigation.ui.ktx)
+
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+    // Okhttp
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+    // viewmodel dependency
+    implementation(libs.lifecycle.viewmodel.ktx)
+
+    // lifecycle scope dependency
+    implementation(libs.lifecycle.runtime.ktx)
+
+    // framework ktx dependency
+    implementation(libs.fragment.ktx)
+    implementation(libs.activity.ktx)
+
+    // Glide
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
 }

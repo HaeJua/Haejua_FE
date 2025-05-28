@@ -8,50 +8,23 @@
     tools:context=".ui.MainActivity">
 
     <FrameLayout
-        android:id="@+id/tab_content"
+        android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tab_menu"/>
+        app:layout_constraintBottom_toTopOf="@id/navi_menu"/>
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_menu"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navi_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:itemIconTint="@color/item_selector"
+        app:itemTextColor="@color/item_selector"
+        app:menu="@menu/navi_menu"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="행사 정보"
-            android:icon="@drawable/Ferris_icon"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="검색"
-            android:icon="@drawable/search_icon"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="즐겨찾기"
-            android:icon="@drawable/star_icon"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="일정"
-            android:icon="@drawable/scedule_icon"/>
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="내정보"
-            android:icon="@drawable/profile_icon"/>
-    </com.google.android.material.tabs.TabLayout>
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
