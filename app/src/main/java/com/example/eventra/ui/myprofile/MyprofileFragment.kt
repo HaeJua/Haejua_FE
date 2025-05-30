@@ -18,6 +18,7 @@ import com.example.eventra.ui.adapter.ClubPostsAdapter
 import com.example.eventra.ui.adapter.DepartPostsAdapter
 import com.example.eventra.ui.adapter.UnivPostsAdapter
 import com.example.eventra.ui.setting.SettingActivity
+import com.example.eventra.ui.user.LoginActivity
 import com.example.eventra.viewmodel.HomeViewModel
 
 class MyprofileFragment : Fragment() {
@@ -42,6 +43,14 @@ class MyprofileFragment : Fragment() {
         binding.apply {
             profileEditBtn.setOnClickListener {
                 Toast.makeText(context, "프로필 편집 버튼", Toast.LENGTH_SHORT).show()
+            }
+            loginBox.setOnClickListener {
+                startActivity(
+                    Intent(
+                        context,
+                        LoginActivity::class.java
+                    )
+                )
             }
             noticeBox.setOnClickListener {
 
