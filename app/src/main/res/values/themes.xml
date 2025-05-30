@@ -5,5 +5,7 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.Eventra" parent="Base.Theme.Eventra" />
+    <style name="Theme.Eventra" parent="Base.Theme.Eventra">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 </resources>

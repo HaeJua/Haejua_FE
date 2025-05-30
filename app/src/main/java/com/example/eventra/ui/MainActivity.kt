@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.eventra.R
 import com.example.eventra.databinding.ActivityMainBinding
 import com.example.eventra.ui.home.HomeFragment
+import com.example.eventra.ui.search.SearchFragment
 import com.example.eventra.viewmodel.MainViewModel
 import com.google.android.material.tabs.TabLayout
 
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.search -> {
+                    supportFragmentManager.beginTransaction().replace(R.id.content, SearchFragment()).commit()
                     true
                 }
                 R.id.favorite -> {
