@@ -30,6 +30,15 @@
         <activity
             android:name=".ui.MainActivity"
             android:exported="false"/>
+        <activity
+            android:name=".ui.home.UnivMorePostActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.home.DepartMorePostActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.home.ClubMorePostActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>
