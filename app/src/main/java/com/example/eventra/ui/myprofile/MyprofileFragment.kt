@@ -58,6 +58,9 @@ class MyprofileFragment : Fragment() {
             license.setOnClickListener {
 
             }
+            logoutBox.setOnClickListener {
+
+            }
         }
     }
 }

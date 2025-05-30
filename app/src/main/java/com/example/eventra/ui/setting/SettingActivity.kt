@@ -53,6 +53,9 @@ class SettingActivity : AppCompatActivity() {
             license.setOnClickListener {
 
             }
+            logoutBox.setOnClickListener {
+
+            }
         }
     }
 }
