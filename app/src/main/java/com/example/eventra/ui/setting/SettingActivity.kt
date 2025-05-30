@@ -47,7 +47,13 @@ class SettingActivity : AppCompatActivity() {
             sceduleBox.setOnClickListener {
 
             }
+            reportBox.setOnClickListener {
+
+            }
             license.setOnClickListener {
+
+            }
+            logoutBox.setOnClickListener {
 
             }
         }

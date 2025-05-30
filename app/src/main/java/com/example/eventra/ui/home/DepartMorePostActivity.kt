@@ -17,13 +17,13 @@ import com.example.eventra.viewmodel.UnivMorePostViewModel
 
 class DepartMorePostActivity : AppCompatActivity() {
 
-    val tempPosts = listOf(
-        Post(1, "", "선배들이 쏜다! 샌드위치"),
-        Post(2, "", "2025학년도 1학기 중"),
-        Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
-        Post(4, "", "경북대학교 웹진 280호 발간"),
-        Post(5, "", "호반우를 꾸며줘 당첨자 발표"),
-        Post(6, "", "2025학년도 하계 및 2학기 현장실습교육과정 학생 모집 안내"),
+    val tempPosts = listOf<Post>(
+//        Post(1, "", "선배들이 쏜다! 샌드위치"),
+//        Post(2, "", "2025학년도 1학기 중"),
+//        Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
+//        Post(4, "", "경북대학교 웹진 280호 발간"),
+//        Post(5, "", "호반우를 꾸며줘 당첨자 발표"),
+//        Post(6, "", "2025학년도 하계 및 2학기 현장실습교육과정 학생 모집 안내"),
     )
     val categoryList = listOf(
         "행사",
@@ -74,7 +74,14 @@ class DepartMorePostActivity : AppCompatActivity() {
                 }
             }
         binding.departPosts.adapter = departPostsAdapter
-        departPostsAdapter.submitList(tempPosts)
+        if (tempPosts.isEmpty()) {
+            binding.departPostEmptyBox.visibility = View.VISIBLE
+            binding.departPosts.visibility = View.INVISIBLE
+        } else {
+            binding.departPostEmptyBox.visibility = View.INVISIBLE
+            binding.departPosts.visibility = View.VISIBLE
+            departPostsAdapter.submitList(tempPosts)
+        }
 
         // 단과대 카테고리 리스트
         binding.ldepartCategory.run {

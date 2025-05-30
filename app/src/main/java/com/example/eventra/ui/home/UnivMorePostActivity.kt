@@ -60,7 +60,14 @@ class UnivMorePostActivity : AppCompatActivity() {
                 }
             }
         binding.univPosts.adapter = univPostsAdapter
-        univPostsAdapter.submitList(tempPosts)
+        if (tempPosts.isEmpty()) {
+            binding.univPostEmptyBox.visibility = View.VISIBLE
+            binding.univPosts.visibility = View.INVISIBLE
+        } else {
+            binding.univPostEmptyBox.visibility = View.INVISIBLE
+            binding.univPosts.visibility = View.VISIBLE
+            univPostsAdapter.submitList(tempPosts)
+        }
 
         // 포스트 카테고리 리스트
         binding.postCategory.apply {
