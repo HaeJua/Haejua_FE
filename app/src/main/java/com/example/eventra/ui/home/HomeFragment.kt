@@ -16,6 +16,7 @@ import com.example.eventra.ui.adapter.CategorySpinnerAdapter
 import com.example.eventra.ui.adapter.ClubPostsAdapter
 import com.example.eventra.ui.adapter.DepartPostsAdapter
 import com.example.eventra.ui.adapter.UnivPostsAdapter
+import com.example.eventra.ui.setting.SettingActivity
 import com.example.eventra.viewmodel.HomeViewModel
 
 class HomeFragment : Fragment() {
@@ -63,7 +64,53 @@ class HomeFragment : Fragment() {
     }
 
     private fun setUi() {
-
+        binding.apply {
+            settingBtn.setOnClickListener {
+                startActivity(Intent(
+                    context,
+                    SettingActivity::class.java
+                ))
+            }
+            // 대학 정보 더보기 박스 클릭 이벤트
+            univMoreBox.setOnClickListener {
+                startActivity(Intent(
+                    context,
+                    UnivMorePostActivity::class.java
+                ))
+            }
+            univMoreBtn.setOnClickListener {
+                startActivity(Intent(
+                    context,
+                    UnivMorePostActivity::class.java
+                ))
+            }
+            // 단과대 정보 더보기 박스 클릭 이벤트
+            departMoreBox.setOnClickListener {
+                startActivity(Intent(
+                    context,
+                    DepartMorePostActivity::class.java
+                ))
+            }
+            departMoreBtn.setOnClickListener {
+                startActivity(Intent(
+                    context,
+                    DepartMorePostActivity::class.java
+                ))
+            }
+            // 총동아리 정보 더보기 박스 클릭 이벤트
+            clubMoreBox.setOnClickListener {
+                startActivity(Intent(
+                    context,
+                    ClubMorePostActivity::class.java
+                ))
+            }
+            clubMoreBtn.setOnClickListener {
+                startActivity(Intent(
+                    context,
+                    ClubMorePostActivity::class.java
+                ))
+            }
+        }
     }
 
     private fun setAdapter() {
