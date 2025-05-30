@@ -160,6 +160,7 @@ class HomeFragment : Fragment() {
                     val value = getItemAtPosition(p2).toString()
                     Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
                 }
+
                 override fun onNothingSelected(p0: AdapterView<*>?) {
                     // 선택되지 않은 경우
                 }
@@ -193,6 +194,7 @@ class HomeFragment : Fragment() {
                     val value = getItemAtPosition(p2).toString()
                     Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
                 }
+
                 override fun onNothingSelected(p0: AdapterView<*>?) {
                     // 선택되지 않은 경우
                 }
@@ -206,6 +208,7 @@ class HomeFragment : Fragment() {
                     val value = getItemAtPosition(p2).toString()
                     Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
                 }
+
                 override fun onNothingSelected(p0: AdapterView<*>?) {
                     // 선택되지 않은 경우
                 }
@@ -219,6 +222,7 @@ class HomeFragment : Fragment() {
                     val value = getItemAtPosition(p2).toString()
                     Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
                 }
+
                 override fun onNothingSelected(p0: AdapterView<*>?) {
                     // 선택되지 않은 경우
                 }
@@ -251,6 +255,7 @@ class HomeFragment : Fragment() {
                     val value = getItemAtPosition(p2).toString()
                     Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
                 }
+
                 override fun onNothingSelected(p0: AdapterView<*>?) {
                     // 선택되지 않은 경우
                 }
