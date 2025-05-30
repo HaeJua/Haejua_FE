@@ -85,8 +85,31 @@
         tools:listitem="@layout/item_post"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         android:layout_margin="16dp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/upper_border"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/univ_post_empty_box"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="12dp"
+        android:background="@drawable/cardview_dotte_border"
+        android:gravity="center"
+        android:padding="32dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upper_border"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:text="관련 게시글이 없어요 ㅠㅅㅠ"
+            android:textSize="24sp"/>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

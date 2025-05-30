@@ -98,10 +98,32 @@
                     android:orientation="horizontal"
                     tools:listitem="@layout/item_post"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:visibility="invisible"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/univ_upper_border"
                     app:layout_constraintBottom_toTopOf="@id/univ_more_box"/>
+
+                <LinearLayout
+                    android:id="@+id/univ_post_empty_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/cardview_dotte_border"
+                    android:gravity="center"
+                    android:padding="32dp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/univ_upper_border"
+                    app:layout_constraintBottom_toTopOf="@id/univ_more_box">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:text="관련 게시글이 없어요 ㅠㅅㅠ" />
+                </LinearLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/univ_more_box"
@@ -207,10 +229,32 @@
                     android:orientation="horizontal"
                     tools:listitem="@layout/item_post"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:visibility="visible"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/depart_upper_border"
                     app:layout_constraintBottom_toTopOf="@id/depart_more_box"/>
+
+                <LinearLayout
+                    android:id="@+id/depart_post_empty_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/cardview_dotte_border"
+                    android:gravity="center"
+                    android:padding="32dp"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/depart_upper_border"
+                    app:layout_constraintBottom_toTopOf="@id/depart_more_box">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:text="관련 게시글이 없어요 ㅠㅅㅠ" />
+                </LinearLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/depart_more_box"
@@ -321,10 +365,32 @@
                     android:orientation="horizontal"
                     tools:listitem="@layout/item_post"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:visibility="invisible"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/club_upper_border"
                     app:layout_constraintBottom_toTopOf="@id/club_more_box"/>
+
+                <LinearLayout
+                    android:id="@+id/club_post_empty_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/cardview_dotte_border"
+                    android:gravity="center"
+                    android:padding="32dp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/club_upper_border"
+                    app:layout_constraintBottom_toTopOf="@id/club_more_box">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:text="관련 게시글이 없어요 ㅠㅅㅠ" />
+                </LinearLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/club_more_box"
