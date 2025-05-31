@@ -13,8 +13,7 @@
         android:layout_marginBottom="4dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:background="@drawable/rounded_corner"
-        android:layout_aspectRatio="1" />
+        android:background="@drawable/rounded_corner" />
 
     <ImageView
         android:id="@+id/favoriteToggle"

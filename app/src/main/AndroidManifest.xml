@@ -49,7 +49,7 @@
             android:name=".ui.user.SignupActivity"
             android:exported="false"/>
         <activity android:name=".ui.detail_hb" />
-        <activity android:name=".ui.FavoriteActivity" />
+        <activity android:name=".ui.favorite.FavoriteActivity" />
     </application>
 
 </manifest>
