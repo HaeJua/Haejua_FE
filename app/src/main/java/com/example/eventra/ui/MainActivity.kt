@@ -1,12 +1,11 @@
 package com.example.eventra.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.eventra.R
 import com.example.eventra.databinding.ActivityMainBinding
 import com.example.eventra.ui.home.HomeFragment

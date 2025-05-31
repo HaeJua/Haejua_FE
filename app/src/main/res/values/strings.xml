@@ -1,3 +1,39 @@
 <resources>
     <string name="app_name">Eventra</string>
+    <string name="favorite_title">즐겨찾기</string>
+    <string name="hot_events">🔥행사</string>
+    <string name="desc_img01">2025학년도 1학기 중간고사기간 이천원의 저녁밥</string>
+    <string name="desc_img02">선배들이 쏜다!‘샌드위치&amp;과일’ 세트</string>
+    <string name="desc_img03">성년의 날 기념 0원의 아침밥</string>
+    <string name="hot_benefits">🔥제휴</string>
+    <string name="star_filled">즐겨찾기 표시됨</string>
+
+
+    <string name="back_button_desc">뒤로가기</string>
+    <string name="partnership_title">제휴 정보</string>
+    <string name="store_name">4242 샌드위치</string>
+    <string name="calendar_icon_desc">캘린더</string>
+    <string name="notification_icon_desc">알림</string>
+    <string name="favorite_icon_desc">즐겨찾기</string>
+    <string name="slider_image_desc">이미지 슬라이더</string>
+    <string name="left_arrow_desc">이전</string>
+    <string name="right_arrow_desc">다음</string>
+    <string name="benefit_text">
+        제휴 기간 : 2025.05.14 - 2025.12.31\n
+        혜택 대상 : IT 대학 학부 재학생, 학생증 지참 필수\n
+        제휴 혜택 :\n
+          1. 샐러드 or 샌드위치 구매 시 토핑 1가지 추가, 캔음료(애플망고) 중 택1\n
+          2. 3만원 이상 구매 시 아메리카노 or 아이스티 1잔 제공\n
+          3. 샌드위치, 샐러드 10+1 쿠폰 제공(클래식 샌드위치 기준)\n
+          4. 30개 이상 단체 주문 시 10% 할인\n
+          5. 선결제 시 10% 추가 적립\n
+        유의사항 : 모든 혜택은 홀 방문 고객 한정\n
+          1,2,3번 혜택은 중복 적용 가능\n
+          4,5번 혜택은 다른 혜택과 중복 불가
+    </string>
+
+    <string name="favorite_icon_desc_add">즐겨찾기 추가</string>
+    <string name="favorite_icon_desc_remove">즐겨찾기 해제</string>
+
+
 </resources>
