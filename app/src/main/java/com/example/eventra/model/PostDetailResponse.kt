@@ -6,8 +6,7 @@ data class PostDetailResponse(
     val id: Int,
     val title: String,
     val image: List<String>,
-    val duration: Date,
+    val duration: String,
     val target: String,
-    val benefit: String,
     val notice: String,
 )
