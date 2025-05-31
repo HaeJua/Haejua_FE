@@ -10,11 +10,38 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.eventra.R
 import com.example.eventra.databinding.FragmentFavoriteBinding
+import com.example.eventra.model.Post
 import com.example.eventra.ui.PostDetailActivity
+import com.example.eventra.ui.adapter.FavoritePostsAdapter
+import com.example.eventra.ui.adapter.UnivPostsAdapter
 
 class FavoriteFragment : Fragment() {
 
-    // 즐겨찾기 상태 저장
+    val eventTempPosts = listOf(
+        Post(1, "", "선배들이 쏜다! 샌드위치"),
+        Post(2, "", "2025학년도 1학기 중"),
+        Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
+    )
+    val partnershipTempPosts = listOf(
+        Post(1, "", "선배들이 쏜다! 샌드위치"),
+        Post(2, "", "2025학년도 1학기 중"),
+        Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
+    )
+    val rentalTempPosts = listOf(
+        Post(1, "", "선배들이 쏜다! 샌드위치"),
+        Post(2, "", "2025학년도 1학기 중"),
+        Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
+    )
+    val mtTempPosts = listOf(
+        Post(1, "", "선배들이 쏜다! 샌드위치"),
+        Post(2, "", "2025학년도 1학기 중"),
+        Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
+    )
+    val festivalTempPosts = listOf(
+        Post(1, "", "선배들이 쏜다! 샌드위치"),
+        Post(2, "", "2025학년도 1학기 중"),
+        Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
+    )
     private val favoriteStates = mutableMapOf<Int, Boolean>()
     lateinit var binding: FragmentFavoriteBinding
     override fun onCreateView(
@@ -33,42 +60,99 @@ class FavoriteFragment : Fragment() {
     }
 
     private fun setAdapter() {
+        // 행사 정보 리스트
+        val eventPostsAdapter = FavoritePostsAdapter()
+        eventPostsAdapter.detailPostListener =
+            object : FavoritePostsAdapter.DetailPostListener {
+                override fun onClick(post: Post) {
+                    TODO("Not yet implemented")
+                }
+            }
+        binding.eventPosts.adapter = eventPostsAdapter
+        if (eventTempPosts.isEmpty()) {
+            binding.eventPostEmptyBox.visibility = View.VISIBLE
+            binding.eventPosts.visibility = View.INVISIBLE
+        } else {
+            binding.eventPostEmptyBox.visibility = View.INVISIBLE
+            binding.eventPosts.visibility = View.VISIBLE
+            eventPostsAdapter.submitList(eventTempPosts)
+        }
 
+        // 제휴 정보 리스트
+        val partnershipPostsAdapter = FavoritePostsAdapter()
+        partnershipPostsAdapter.detailPostListener =
+            object : FavoritePostsAdapter.DetailPostListener {
+                override fun onClick(post: Post) {
+                    TODO("Not yet implemented")
+                }
+            }
+        binding.partnershipPosts.adapter = partnershipPostsAdapter
+        if (partnershipTempPosts.isEmpty()) {
+            binding.partnershipPostEmptyBox.visibility = View.VISIBLE
+            binding.partnershipPosts.visibility = View.INVISIBLE
+        } else {
+            binding.partnershipPostEmptyBox.visibility = View.INVISIBLE
+            binding.partnershipPosts.visibility = View.VISIBLE
+            partnershipPostsAdapter.submitList(partnershipTempPosts)
+        }
+
+        // 대여 정보 리스트
+        val rentalPostsAdapter = FavoritePostsAdapter()
+        rentalPostsAdapter.detailPostListener =
+            object : FavoritePostsAdapter.DetailPostListener {
+                override fun onClick(post: Post) {
+                    TODO("Not yet implemented")
+                }
+            }
+        binding.rentalPosts.adapter = rentalPostsAdapter
+        if (rentalTempPosts.isEmpty()) {
+            binding.rentalPostEmptyBox.visibility = View.VISIBLE
+            binding.rentalPosts.visibility = View.INVISIBLE
+        } else {
+            binding.rentalPostEmptyBox.visibility = View.INVISIBLE
+            binding.rentalPosts.visibility = View.VISIBLE
+            rentalPostsAdapter.submitList(rentalTempPosts)
+        }
+
+        // MT 정보 리스트
+        val mtPostsAdapter = FavoritePostsAdapter()
+        mtPostsAdapter.detailPostListener =
+            object : FavoritePostsAdapter.DetailPostListener {
+                override fun onClick(post: Post) {
+                    TODO("Not yet implemented")
+                }
+            }
+        binding.mtPosts.adapter = mtPostsAdapter
+        if (mtTempPosts.isEmpty()) {
+            binding.mtPostEmptyBox.visibility = View.VISIBLE
+            binding.mtPosts.visibility = View.INVISIBLE
+        } else {
+            binding.mtPostEmptyBox.visibility = View.INVISIBLE
+            binding.mtPosts.visibility = View.VISIBLE
+            mtPostsAdapter.submitList(mtTempPosts)
+        }
+
+        // 축제 정보 리스트
+        val festivalPostsAdapter = FavoritePostsAdapter()
+        festivalPostsAdapter.detailPostListener =
+            object : FavoritePostsAdapter.DetailPostListener {
+                override fun onClick(post: Post) {
+                    TODO("Not yet implemented")
+                }
+            }
+        binding.festivalPosts.adapter = festivalPostsAdapter
+        if (festivalTempPosts.isEmpty()) {
+            binding.festivalPostEmptyBox.visibility = View.VISIBLE
+            binding.festivalPosts.visibility = View.INVISIBLE
+        } else {
+            binding.festivalPostEmptyBox.visibility = View.INVISIBLE
+            binding.festivalPosts.visibility = View.VISIBLE
+            festivalPostsAdapter.submitList(festivalTempPosts)
+        }
     }
 
     private fun setUi() {
-        // 각 이미지 및 즐겨찾기 버튼 처리
-        setupCard(R.id.image1, R.id.star1, 1)
-        setupCard(R.id.image2, R.id.star2, 2)
-        setupCard(R.id.image3, R.id.star3, 3)
-        setupCard(R.id.image4, R.id.star4, 4)
-        setupCard(R.id.image5, R.id.star5, 5)
-        setupCard(R.id.image6, R.id.star6, 6)
-    }
 
-    private fun setupCard(imageId: Int, starId: Int, index: Int) {
-//        val imageView = findViewById<ImageView>(imageId)
-//        val starView = findViewById<ImageView>(starId)
-//
-//        // 초기 상태 설정 (기본 true: 즐겨찾기 되어 있음)
-//        favoriteStates[index] = true
-//
-//        // 이미지 클릭 시 상세 화면으로 이동
-//        imageView.setOnClickListener {
-//            val intent = Intent(this, PostDetailActivity::class.java)
-//            startActivity(intent)
-//        }
-//
-//        // 즐겨찾기 아이콘 클릭 시 토글
-//        starView.setOnClickListener {
-//            val isFavorite = favoriteStates[index] ?: true
-//            if (isFavorite) {
-//                starView.setImageResource(R.drawable.star_outline)
-//            } else {
-//                starView.setImageResource(R.drawable.star_filled)
-//            }
-//            favoriteStates[index] = !isFavorite
-//        }
     }
 
 }

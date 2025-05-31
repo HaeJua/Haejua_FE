@@ -8,6 +8,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.eventra.R
 import com.example.eventra.databinding.ActivityMainBinding
+import com.example.eventra.ui.favorite.FavoriteFragment
 import com.example.eventra.ui.home.HomeFragment
 import com.example.eventra.ui.myprofile.MyprofileFragment
 import com.example.eventra.ui.search.SearchFragment
@@ -42,6 +43,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.favorite -> {
+                    supportFragmentManager.beginTransaction().replace(R.id.content, FavoriteFragment()).commit()
                     true
                 }
                 R.id.scedule -> {

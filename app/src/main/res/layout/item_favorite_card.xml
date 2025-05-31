@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="0dp"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_weight="1"
-    android:layout_margin="8dp">
+    android:layout_margin="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
-        android:id="@+id/image"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="top"
-        android:layout_marginBottom="4dp"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        android:background="@drawable/rounded_corner" />
-
-    <ImageView
-        android:id="@+id/favoriteToggle"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_gravity="top|end"
-        android:src="@drawable/star_filled"
-        android:padding="4dp" />
+        android:id="@+id/post_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/post_ex_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/description"
-        android:layout_width="match_parent"
+        android:id="@+id/post_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
+        android:text="벚꽃은 활짝, 우리는 찰칵! 당첨자 발표"
+        android:textSize="12dp"
+        android:ems="8"
         android:maxLines="1"
         android:ellipsize="end"
-        android:textSize="12sp"
-        android:text="이벤트 설명"
-        android:layout_marginTop="4dp"/>
-</FrameLayout>
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/post_img"/>
+
+    <ImageButton
+        android:id="@+id/favorite_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/star_icon"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
