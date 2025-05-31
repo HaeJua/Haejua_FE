@@ -48,7 +48,11 @@
         <activity
             android:name=".ui.user.SignupActivity"
             android:exported="false"/>
-        <activity android:name=".ui.home.PostDetailActivity" />
+        <activity android:name=".ui.home.PostDetailActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.user.EditProfileActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

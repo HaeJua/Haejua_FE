@@ -1,5 +1,6 @@
 package com.example.eventra.ui.setting
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -15,6 +16,7 @@ import com.example.eventra.model.Post
 import com.example.eventra.ui.adapter.CategorySpinnerAdapter
 import com.example.eventra.ui.adapter.ClubPostsAdapter
 import com.example.eventra.ui.adapter.DepartPostsAdapter
+import com.example.eventra.ui.user.EditProfileActivity
 import com.example.eventra.viewmodel.ClubMorePostViewModel
 import com.example.eventra.viewmodel.DepartMorePostViewModel
 import com.example.eventra.viewmodel.UnivMorePostViewModel
@@ -36,7 +38,7 @@ class SettingActivity : AppCompatActivity() {
                 finish()
             }
             profileEditBtn.setOnClickListener {
-                Toast.makeText(this@SettingActivity, "프로필 편집 버튼", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this@SettingActivity, EditProfileActivity::class.java))
             }
             noticeBox.setOnClickListener {
 
