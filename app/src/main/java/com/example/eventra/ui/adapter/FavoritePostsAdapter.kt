@@ -16,9 +16,10 @@ import com.bumptech.glide.Glide
 import com.example.eventra.R
 import com.example.eventra.databinding.ItemFavoriteCardBinding
 import com.example.eventra.databinding.ItemPostBinding
+import com.example.eventra.model.FavoritePost
 import com.example.eventra.model.Post
 
-class FavoritePostsAdapter : ListAdapter<Post, FavoritePostsAdapter.FavoritePostsViewHolder>(
+class FavoritePostsAdapter : ListAdapter<FavoritePost, FavoritePostsAdapter.FavoritePostsViewHolder>(
     PostAllDiffCallback()
 ) {
     private lateinit var binding: ItemFavoriteCardBinding
@@ -26,18 +27,31 @@ class FavoritePostsAdapter : ListAdapter<Post, FavoritePostsAdapter.FavoritePost
     inner class FavoritePostsViewHolder(private val binding: ItemFavoriteCardBinding) :
         RecyclerView.ViewHolder(binding.root) {
         @RequiresApi(Build.VERSION_CODES.Q)
-        fun setBind(post: Post) {
+        fun setBind(favoritePost: FavoritePost) {
             binding.apply {
-                if (post.image != null && post.image != "") {
+                if (favoritePost.image != null && favoritePost.image != "") {
                     Glide.with(this.root)
-                        .load(post.image)
+                        .load(favoritePost.image)
                         .into(postImg)
                 } else {
                     postImg.setImageResource(R.drawable.post_ex_1)
                 }
-                postTitle.text = post.title
+                postTitle.text = favoritePost.title
+                // 즐겨찾기 토글
+                if (favoritePost.isFavorite) {
+                    favoriteBtn.setImageResource(R.drawable.star_filled)
+                } else {
+                    favoriteBtn.setImageResource(R.drawable.star_outline)
+                }
+                favoriteBtn.setOnClickListener {
+                    if (favoritePost.isFavorite) {
+                        favoriteBtn.setImageResource(R.drawable.star_outline)
+                    } else {
+                        favoriteBtn.setImageResource(R.drawable.star_filled)
+                    }
+                }
                 root.setOnClickListener {
-                    detailPostListener.onClick(post = post)
+                    detailPostListener.onClick(favoritePost = favoritePost)
                 }
             }
         }
@@ -54,17 +68,17 @@ class FavoritePostsAdapter : ListAdapter<Post, FavoritePostsAdapter.FavoritePost
     }
 
     interface DetailPostListener {
-        fun onClick(post: Post)
+        fun onClick(favoritePost: FavoritePost)
     }
 
     lateinit var detailPostListener: DetailPostListener
 
-    class PostAllDiffCallback : DiffUtil.ItemCallback<Post>() {
-        override fun areItemsTheSame(oldItem: Post, newItem: Post): Boolean {
+    class PostAllDiffCallback : DiffUtil.ItemCallback<FavoritePost>() {
+        override fun areItemsTheSame(oldItem: FavoritePost, newItem: FavoritePost): Boolean {
             return oldItem.postId == newItem.postId
         }
 
-        override fun areContentsTheSame(oldItem: Post, newItem: Post): Boolean {
+        override fun areContentsTheSame(oldItem: FavoritePost, newItem: FavoritePost): Boolean {
             return oldItem == newItem
         }
     }

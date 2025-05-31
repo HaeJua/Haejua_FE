@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.eventra.databinding.FragmentFavoriteBinding
+import com.example.eventra.model.FavoritePost
 import com.example.eventra.model.Post
 import com.example.eventra.ui.adapter.FavoritePostsAdapter
 import com.example.eventra.ui.home.PostDetailActivity
@@ -14,29 +15,29 @@ import com.example.eventra.ui.home.PostDetailActivity
 class FavoriteFragment : Fragment() {
 
     val eventTempPosts = listOf(
-        Post(1, "", "선배들이 쏜다! 샌드위치"),
-        Post(2, "", "2025학년도 1학기 중"),
-        Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
+        FavoritePost(1, "", "선배들이 쏜다! 샌드위치", true),
+        FavoritePost(2, "", "2025학년도 1학기 중", false),
+        FavoritePost(3, "", "벚꽃은 활짝, 우리는 찰칵!", true),
     )
-    val partnershipTempPosts = listOf<Post>(
-//        Post(1, "", "선배들이 쏜다! 샌드위치"),
-//        Post(2, "", "2025학년도 1학기 중"),
-//        Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
+    val partnershipTempPosts = listOf<FavoritePost>(
+//        FavoritePost(1, "", "선배들이 쏜다! 샌드위치", false),
+//        FavoritePost(2, "", "2025학년도 1학기 중", true),
+//        FavoritePost(3, "", "벚꽃은 활짝, 우리는 찰칵!", true),
     )
     val rentalTempPosts = listOf(
-        Post(1, "", "선배들이 쏜다! 샌드위치"),
-        Post(2, "", "2025학년도 1학기 중"),
-        Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
+        FavoritePost(1, "", "선배들이 쏜다! 샌드위치", false),
+        FavoritePost(2, "", "2025학년도 1학기 중", false),
+        FavoritePost(3, "", "벚꽃은 활짝, 우리는 찰칵!", true),
     )
-    val mtTempPosts = listOf<Post>(
-//        Post(1, "", "선배들이 쏜다! 샌드위치"),
-//        Post(2, "", "2025학년도 1학기 중"),
-//        Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
+    val mtTempPosts = listOf<FavoritePost>(
+//        FavoritePost(1, "", "선배들이 쏜다! 샌드위치", true),
+//        FavoritePost(2, "", "2025학년도 1학기 중", false),
+//        FavoritePost(3, "", "벚꽃은 활짝, 우리는 찰칵!", false),
     )
     val festivalTempPosts = listOf(
-        Post(1, "", "선배들이 쏜다! 샌드위치"),
-        Post(2, "", "2025학년도 1학기 중"),
-        Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
+        FavoritePost(1, "", "선배들이 쏜다! 샌드위치", false),
+        FavoritePost(2, "", "2025학년도 1학기 중", false),
+        FavoritePost(3, "", "벚꽃은 활짝, 우리는 찰칵!", true),
     )
     private val favoriteStates = mutableMapOf<Int, Boolean>()
     lateinit var binding: FragmentFavoriteBinding
@@ -60,7 +61,7 @@ class FavoriteFragment : Fragment() {
         val eventPostsAdapter = FavoritePostsAdapter()
         eventPostsAdapter.detailPostListener =
             object : FavoritePostsAdapter.DetailPostListener {
-                override fun onClick(post: Post) {
+                override fun onClick(favoritePost: FavoritePost) {
                     startActivity(Intent(context, PostDetailActivity::class.java))
                 }
             }
@@ -78,7 +79,7 @@ class FavoriteFragment : Fragment() {
         val partnershipPostsAdapter = FavoritePostsAdapter()
         partnershipPostsAdapter.detailPostListener =
             object : FavoritePostsAdapter.DetailPostListener {
-                override fun onClick(post: Post) {
+                override fun onClick(favoritePost: FavoritePost) {
                     startActivity(Intent(context, PostDetailActivity::class.java))
                 }
             }
@@ -96,7 +97,7 @@ class FavoriteFragment : Fragment() {
         val rentalPostsAdapter = FavoritePostsAdapter()
         rentalPostsAdapter.detailPostListener =
             object : FavoritePostsAdapter.DetailPostListener {
-                override fun onClick(post: Post) {
+                override fun onClick(favoritePost: FavoritePost) {
                     startActivity(Intent(context, PostDetailActivity::class.java))
                 }
             }
@@ -114,7 +115,7 @@ class FavoriteFragment : Fragment() {
         val mtPostsAdapter = FavoritePostsAdapter()
         mtPostsAdapter.detailPostListener =
             object : FavoritePostsAdapter.DetailPostListener {
-                override fun onClick(post: Post) {
+                override fun onClick(favoritePost: FavoritePost) {
                     startActivity(Intent(context, PostDetailActivity::class.java))
                 }
             }
@@ -132,7 +133,7 @@ class FavoriteFragment : Fragment() {
         val festivalPostsAdapter = FavoritePostsAdapter()
         festivalPostsAdapter.detailPostListener =
             object : FavoritePostsAdapter.DetailPostListener {
-                override fun onClick(post: Post) {
+                override fun onClick(favoritePost: FavoritePost) {
                     startActivity(Intent(context, PostDetailActivity::class.java))
                 }
             }
