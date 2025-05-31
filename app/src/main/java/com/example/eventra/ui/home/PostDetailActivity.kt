@@ -1,4 +1,4 @@
-package com.example.eventra.ui
+package com.example.eventra.ui.home
 
 import android.os.Bundle
 import android.view.View
@@ -10,6 +10,7 @@ import com.example.eventra.R
 
 class PostDetailActivity : AppCompatActivity() {
 
+    lateinit var binding: PostDetailActivity
     private lateinit var backArrow: ImageView
     private lateinit var titleText: TextView
     private lateinit var storeName: TextView

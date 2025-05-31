@@ -1,19 +1,13 @@
 package com.example.eventra.ui.favorite
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.eventra.R
 import com.example.eventra.databinding.FragmentFavoriteBinding
 import com.example.eventra.model.Post
-import com.example.eventra.ui.PostDetailActivity
 import com.example.eventra.ui.adapter.FavoritePostsAdapter
-import com.example.eventra.ui.adapter.UnivPostsAdapter
 
 class FavoriteFragment : Fragment() {
 
@@ -22,20 +16,20 @@ class FavoriteFragment : Fragment() {
         Post(2, "", "2025학년도 1학기 중"),
         Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
     )
-    val partnershipTempPosts = listOf(
-        Post(1, "", "선배들이 쏜다! 샌드위치"),
-        Post(2, "", "2025학년도 1학기 중"),
-        Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
+    val partnershipTempPosts = listOf<Post>(
+//        Post(1, "", "선배들이 쏜다! 샌드위치"),
+//        Post(2, "", "2025학년도 1학기 중"),
+//        Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
     )
     val rentalTempPosts = listOf(
         Post(1, "", "선배들이 쏜다! 샌드위치"),
         Post(2, "", "2025학년도 1학기 중"),
         Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
     )
-    val mtTempPosts = listOf(
-        Post(1, "", "선배들이 쏜다! 샌드위치"),
-        Post(2, "", "2025학년도 1학기 중"),
-        Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
+    val mtTempPosts = listOf<Post>(
+//        Post(1, "", "선배들이 쏜다! 샌드위치"),
+//        Post(2, "", "2025학년도 1학기 중"),
+//        Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
     )
     val festivalTempPosts = listOf(
         Post(1, "", "선배들이 쏜다! 샌드위치"),
