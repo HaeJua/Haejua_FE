@@ -72,13 +72,13 @@ class detail_hb : AppCompatActivity() {
             }
         }
 
-        rightArrow.setOnClic1. AndroidManifest.xml 열기
-                kListener {
+        rightArrow.setOnClickListener {
             if (currentIndex < images.size - 1) {
                 currentIndex++
                 updateImage()
             }
         }
+
 
         // 초기 이미지 세팅
         updateImage()
