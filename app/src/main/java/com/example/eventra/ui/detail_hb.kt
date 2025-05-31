@@ -79,7 +79,6 @@ class detail_hb : AppCompatActivity() {
             }
         }
 
-
         // 초기 이미지 세팅
         updateImage()
     }
