@@ -144,7 +144,6 @@ class HomeFragment : Fragment() {
                 }
             }
         binding.univPosts.adapter = univPostsAdapter
-
         homeViewModel.posts.observe(viewLifecycleOwner) {
             if (it.official.isEmpty()) {
                 binding.univPostEmptyBox.visibility = View.VISIBLE
@@ -155,7 +154,6 @@ class HomeFragment : Fragment() {
                 univPostsAdapter.submitList(it.official)
             }
         }
-
 
         // 포스트 카테고리 리스트
         binding.univPostCategory.run {
