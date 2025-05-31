@@ -114,7 +114,6 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
                 android:clickable="true"
-                android:background="@drawable/custom_ripple_effect"
                 android:visibility="visible"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -166,7 +165,6 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginTop="16dp"
                 android:clickable="true"
-                android:background="@drawable/custom_ripple_effect"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/border_1">
@@ -217,7 +215,6 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginTop="16dp"
                 android:clickable="true"
-                android:background="@drawable/custom_ripple_effect"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/border_2">
@@ -268,7 +265,6 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginTop="16dp"
                 android:clickable="true"
-                android:background="@drawable/custom_ripple_effect"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/border_3">
@@ -319,7 +315,6 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginTop="16dp"
                 android:clickable="true"
-                android:background="@drawable/custom_ripple_effect"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/border_4">
@@ -373,7 +368,6 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginTop="16dp"
                 android:clickable="true"
-                android:background="@drawable/custom_ripple_effect"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/border_5"/>
@@ -398,7 +392,6 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginTop="16dp"
                 android:clickable="true"
-                android:background="@drawable/custom_ripple_effect"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/border_6">
@@ -446,7 +439,6 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginTop="16dp"
                 android:clickable="true"
-                android:background="@drawable/custom_ripple_effect"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/border_7">

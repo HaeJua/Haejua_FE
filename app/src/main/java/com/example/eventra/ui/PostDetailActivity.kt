@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.eventra.R
 
-class detail_hb : AppCompatActivity() {
+class PostDetailActivity : AppCompatActivity() {
 
     private lateinit var backArrow: ImageView
     private lateinit var titleText: TextView
@@ -31,7 +31,7 @@ class detail_hb : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.detail)
+        setContentView(R.layout.activity_post_detail)
 
         // View 연결
         backArrow = findViewById(R.id.backArrow)
