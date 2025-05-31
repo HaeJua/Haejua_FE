@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide
 import com.example.eventra.R
 import com.example.eventra.databinding.ItemPostBinding
 import com.example.eventra.model.Post
+import com.example.eventra.ui.utils.Base64ImageExtractor
 
 class DepartPostsAdapter : ListAdapter<Post, DepartPostsAdapter.DepartPostsViewHolder>(
     PostAllDiffCallback()
@@ -29,7 +30,7 @@ class DepartPostsAdapter : ListAdapter<Post, DepartPostsAdapter.DepartPostsViewH
             binding.apply {
                 if (post.image != null && post.image != "") {
                     Glide.with(this.root)
-                        .load(post.image)
+                        .load(Base64ImageExtractor().extractImageFromBase64(post.image))
                         .into(postImg)
                 } else {
                     postImg.setImageResource(R.drawable.post_ex_1)

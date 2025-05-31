@@ -65,6 +65,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        homeViewModel.getHomePosts()
         setAdapter()
         setUi()
     }
@@ -143,13 +144,15 @@ class HomeFragment : Fragment() {
                 }
             }
         binding.univPosts.adapter = univPostsAdapter
-        if (univTempPosts.isEmpty()) {
-            binding.univPostEmptyBox.visibility = View.VISIBLE
-            binding.univPosts.visibility = View.INVISIBLE
-        } else {
-            binding.univPostEmptyBox.visibility = View.INVISIBLE
-            binding.univPosts.visibility = View.VISIBLE
-            univPostsAdapter.submitList(univTempPosts)
+        homeViewModel.posts.observe(viewLifecycleOwner) {
+            if (it.official.isEmpty()) {
+                binding.univPostEmptyBox.visibility = View.VISIBLE
+                binding.univPosts.visibility = View.INVISIBLE
+            } else {
+                binding.univPostEmptyBox.visibility = View.INVISIBLE
+                binding.univPosts.visibility = View.VISIBLE
+                univPostsAdapter.submitList(it.official)
+            }
         }
 
         // 포스트 카테고리 리스트
@@ -176,15 +179,16 @@ class HomeFragment : Fragment() {
                 }
             }
         binding.departPosts.adapter = departPostsAdapter
-        if (departTempPosts.isEmpty()) {
-            binding.departPostEmptyBox.visibility = View.VISIBLE
-            binding.departPosts.visibility = View.INVISIBLE
-        } else {
-            binding.departPostEmptyBox.visibility = View.INVISIBLE
-            binding.departPosts.visibility = View.VISIBLE
-            departPostsAdapter.submitList(departTempPosts)
+        homeViewModel.posts.observe(viewLifecycleOwner) {
+            if (it.department.isEmpty()) {
+                binding.departPostEmptyBox.visibility = View.VISIBLE
+                binding.departPosts.visibility = View.INVISIBLE
+            } else {
+                binding.departPostEmptyBox.visibility = View.INVISIBLE
+                binding.departPosts.visibility = View.VISIBLE
+                departPostsAdapter.submitList(it.department)
+            }
         }
-
 
         // 단과대 카테고리 리스트
         binding.ldepartCategory.run {
@@ -238,13 +242,15 @@ class HomeFragment : Fragment() {
                 }
             }
         binding.clubPosts.adapter = clubPostsAdapter
-        if (clubTempPosts.isEmpty()) {
-            binding.clubPostEmptyBox.visibility = View.VISIBLE
-            binding.clubPosts.visibility = View.INVISIBLE
-        } else {
-            binding.clubPostEmptyBox.visibility = View.INVISIBLE
-            binding.clubPosts.visibility = View.VISIBLE
-            clubPostsAdapter.submitList(clubTempPosts)
+        homeViewModel.posts.observe(viewLifecycleOwner) {
+            if (it.club.isEmpty()) {
+                binding.clubPostEmptyBox.visibility = View.VISIBLE
+                binding.clubPosts.visibility = View.INVISIBLE
+            } else {
+                binding.clubPostEmptyBox.visibility = View.INVISIBLE
+                binding.clubPosts.visibility = View.VISIBLE
+                clubPostsAdapter.submitList(it.club)
+            }
         }
 
         // 포스트 카테고리 리스트
