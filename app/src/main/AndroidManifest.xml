@@ -42,6 +42,12 @@
         <activity
             android:name=".ui.home.ClubMorePostActivity"
             android:exported="false"/>
+        <activity
+            android:name=".ui.user.LoginActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.user.SignupActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

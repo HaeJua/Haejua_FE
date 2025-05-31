@@ -65,7 +65,14 @@ class ClubMorePostActivity : AppCompatActivity() {
                 }
             }
         binding.clubPosts.adapter = clubPostsAdapter
-        clubPostsAdapter.submitList(tempPosts)
+        if (tempPosts.isEmpty()) {
+            binding.clubPostEmptyBox.visibility = View.VISIBLE
+            binding.clubPosts.visibility = View.INVISIBLE
+        } else {
+            binding.clubPostEmptyBox.visibility = View.INVISIBLE
+            binding.clubPosts.visibility = View.VISIBLE
+            clubPostsAdapter.submitList(tempPosts)
+        }
 
         // 포스트 카테고리 리스트
         binding.postCategory.run {
