@@ -79,7 +79,7 @@ class ClubMorePostActivity : AppCompatActivity() {
             onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                     val value = getItemAtPosition(p2).toString()
-                    Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
                 }
                 override fun onNothingSelected(p0: AdapterView<*>?) {
                     // 선택되지 않은 경우

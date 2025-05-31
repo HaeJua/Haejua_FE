@@ -130,7 +130,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="비밃번호"
+                android:text="비밀번호"
                 android:textSize="12dp"
                 android:textStyle="bold"/>
             <ImageView
