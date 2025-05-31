@@ -7,6 +7,7 @@ import android.widget.AdapterView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.eventra.R
 import com.example.eventra.databinding.ActivityDepartMorePostBinding
 import com.example.eventra.databinding.ActivityUnivMorePostBinding
@@ -74,7 +75,10 @@ class DepartMorePostActivity : AppCompatActivity() {
                     startActivity(Intent(this@DepartMorePostActivity, PostDetailActivity::class.java))
                 }
             }
-        binding.departPosts.adapter = departPostsAdapter
+        binding.departPosts.apply {
+            layoutManager = GridLayoutManager(context, 3)
+            adapter = departPostsAdapter
+        }
         if (tempPosts.isEmpty()) {
             binding.departPostEmptyBox.visibility = View.VISIBLE
             binding.departPosts.visibility = View.INVISIBLE

@@ -7,6 +7,7 @@ import android.widget.AdapterView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.eventra.R
 import com.example.eventra.databinding.ActivityClubMorePostBinding
 import com.example.eventra.databinding.ActivityDepartMorePostBinding
@@ -63,7 +64,10 @@ class ClubMorePostActivity : AppCompatActivity() {
                     startActivity(Intent(this@ClubMorePostActivity, PostDetailActivity::class.java))
                 }
             }
-        binding.clubPosts.adapter = clubPostsAdapter
+        binding.clubPosts.apply {
+            layoutManager = GridLayoutManager(context, 3)
+            adapter = clubPostsAdapter
+        }
         if (tempPosts.isEmpty()) {
             binding.clubPostEmptyBox.visibility = View.VISIBLE
             binding.clubPosts.visibility = View.INVISIBLE
