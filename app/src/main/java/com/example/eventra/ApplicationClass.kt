@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit
 class ApplicationClass : Application() {
 
     companion object {
-        const val SERVER_URL = "http://15.164.103.242:8081/api/"
+        const val SERVER_URL = "http://3.39.96.233:8080/api/"
         lateinit var retrofit: Retrofit
         lateinit var sharedPreferencesUtil: SharedPreferences
     }
@@ -22,11 +22,11 @@ class ApplicationClass : Application() {
         super.onCreate()
         sharedPreferencesUtil = SharedPreferences(applicationContext)
 
-//        val loggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-//        val okHttpClient = OkHttpClient.Builder()
-//            .readTimeout(5000, TimeUnit.MILLISECONDS)
-//            .connectTimeout(5000, TimeUnit.MILLISECONDS)
-//            .connectTimeout(30, TimeUnit.SECONDS)
+        val loggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+        val okHttpClient = OkHttpClient.Builder()
+            .readTimeout(5000, TimeUnit.MILLISECONDS)
+            .connectTimeout(5000, TimeUnit.MILLISECONDS)
+            .connectTimeout(30, TimeUnit.SECONDS)
 //            .addInterceptor { chain ->
 //                val originalRequest = chain.request()
 //                val token = sharedPreferencesUtil.getAccessToken() // 저장된 JWT 토큰을 가져옵니다.
@@ -39,14 +39,14 @@ class ApplicationClass : Application() {
 //                val request = requestBuilder.build()
 //                chain.proceed(request)
 //            }
-//            .addInterceptor(loggingInterceptor)
-//            .build()
+            .addInterceptor(loggingInterceptor)
+            .build()
 
-//        retrofit = Retrofit.Builder()
-//            .baseUrl(SERVER_URL)
-//            .addConverterFactory(GsonConverterFactory.create(gson))
-//            .client(okHttpClient)
-//            .build()
+        retrofit = Retrofit.Builder()
+            .baseUrl(SERVER_URL)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .client(okHttpClient)
+            .build()
     }
 
     private val gson: Gson = GsonBuilder()

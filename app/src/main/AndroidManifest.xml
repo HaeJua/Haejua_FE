@@ -14,7 +14,7 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Eventra"
+        android:theme="@style/Base.Theme.Eventra"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
@@ -41,6 +41,17 @@
             android:exported="false"/>
         <activity
             android:name=".ui.home.ClubMorePostActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.user.LoginActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.user.SignupActivity"
+            android:exported="false"/>
+        <activity android:name=".ui.home.PostDetailActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.user.EditProfileActivity"
             android:exported="false"/>
     </application>
 

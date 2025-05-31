@@ -1,11 +1,13 @@
 package com.example.eventra.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.eventra.R
 import com.example.eventra.databinding.ActivityClubMorePostBinding
 import com.example.eventra.databinding.ActivityDepartMorePostBinding
@@ -15,8 +17,6 @@ import com.example.eventra.ui.adapter.CategorySpinnerAdapter
 import com.example.eventra.ui.adapter.ClubPostsAdapter
 import com.example.eventra.ui.adapter.DepartPostsAdapter
 import com.example.eventra.viewmodel.ClubMorePostViewModel
-import com.example.eventra.viewmodel.DepartMorePostViewModel
-import com.example.eventra.viewmodel.UnivMorePostViewModel
 
 class ClubMorePostActivity : AppCompatActivity() {
 
@@ -61,11 +61,21 @@ class ClubMorePostActivity : AppCompatActivity() {
         clubPostsAdapter.detailPostListener =
             object : ClubPostsAdapter.DetailPostListener {
                 override fun onClick(post: Post) {
-                    TODO("Not yet implemented")
+                    startActivity(Intent(this@ClubMorePostActivity, PostDetailActivity::class.java))
                 }
             }
-        binding.clubPosts.adapter = clubPostsAdapter
-        clubPostsAdapter.submitList(tempPosts)
+        binding.clubPosts.apply {
+            layoutManager = GridLayoutManager(context, 3)
+            adapter = clubPostsAdapter
+        }
+        if (tempPosts.isEmpty()) {
+            binding.clubPostEmptyBox.visibility = View.VISIBLE
+            binding.clubPosts.visibility = View.INVISIBLE
+        } else {
+            binding.clubPostEmptyBox.visibility = View.INVISIBLE
+            binding.clubPosts.visibility = View.VISIBLE
+            clubPostsAdapter.submitList(tempPosts)
+        }
 
         // 포스트 카테고리 리스트
         binding.postCategory.run {
@@ -73,7 +83,7 @@ class ClubMorePostActivity : AppCompatActivity() {
             onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                     val value = getItemAtPosition(p2).toString()
-                    Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
                 }
                 override fun onNothingSelected(p0: AdapterView<*>?) {
                     // 선택되지 않은 경우

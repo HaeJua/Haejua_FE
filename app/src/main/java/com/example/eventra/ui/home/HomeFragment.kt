@@ -21,7 +21,13 @@ import com.example.eventra.viewmodel.HomeViewModel
 
 class HomeFragment : Fragment() {
 
-    val tempPosts = listOf(
+    val univTempPosts = listOf(
+        Post(1, "", "선배들이 쏜다! 샌드위치"),
+        Post(2, "", "2025학년도 1학기 중"),
+        Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
+    )
+    val departTempPosts = listOf<Post>()
+    val clubTempPosts = listOf(
         Post(1, "", "선배들이 쏜다! 샌드위치"),
         Post(2, "", "2025학년도 1학기 중"),
         Post(3, "", "벚꽃은 활짝, 우리는 찰칵!"),
@@ -66,49 +72,63 @@ class HomeFragment : Fragment() {
     private fun setUi() {
         binding.apply {
             settingBtn.setOnClickListener {
-                startActivity(Intent(
-                    context,
-                    SettingActivity::class.java
-                ))
+                startActivity(
+                    Intent(
+                        context,
+                        SettingActivity::class.java
+                    )
+                )
             }
             // 대학 정보 더보기 박스 클릭 이벤트
             univMoreBox.setOnClickListener {
-                startActivity(Intent(
-                    context,
-                    UnivMorePostActivity::class.java
-                ))
+                startActivity(
+                    Intent(
+                        context,
+                        UnivMorePostActivity::class.java
+                    )
+                )
             }
             univMoreBtn.setOnClickListener {
-                startActivity(Intent(
-                    context,
-                    UnivMorePostActivity::class.java
-                ))
+                startActivity(
+                    Intent(
+                        context,
+                        UnivMorePostActivity::class.java
+                    )
+                )
             }
             // 단과대 정보 더보기 박스 클릭 이벤트
             departMoreBox.setOnClickListener {
-                startActivity(Intent(
-                    context,
-                    DepartMorePostActivity::class.java
-                ))
+                startActivity(
+                    Intent(
+                        context,
+                        DepartMorePostActivity::class.java
+                    )
+                )
             }
             departMoreBtn.setOnClickListener {
-                startActivity(Intent(
-                    context,
-                    DepartMorePostActivity::class.java
-                ))
+                startActivity(
+                    Intent(
+                        context,
+                        DepartMorePostActivity::class.java
+                    )
+                )
             }
             // 총동아리 정보 더보기 박스 클릭 이벤트
             clubMoreBox.setOnClickListener {
-                startActivity(Intent(
-                    context,
-                    ClubMorePostActivity::class.java
-                ))
+                startActivity(
+                    Intent(
+                        context,
+                        ClubMorePostActivity::class.java
+                    )
+                )
             }
             clubMoreBtn.setOnClickListener {
-                startActivity(Intent(
-                    context,
-                    ClubMorePostActivity::class.java
-                ))
+                startActivity(
+                    Intent(
+                        context,
+                        ClubMorePostActivity::class.java
+                    )
+                )
             }
         }
     }
@@ -119,11 +139,18 @@ class HomeFragment : Fragment() {
         univPostsAdapter.detailPostListener =
             object : UnivPostsAdapter.DetailPostListener {
                 override fun onClick(post: Post) {
-                    TODO("Not yet implemented")
+                    startActivity(Intent(context, PostDetailActivity::class.java))
                 }
             }
         binding.univPosts.adapter = univPostsAdapter
-        univPostsAdapter.submitList(tempPosts)
+        if (univTempPosts.isEmpty()) {
+            binding.univPostEmptyBox.visibility = View.VISIBLE
+            binding.univPosts.visibility = View.INVISIBLE
+        } else {
+            binding.univPostEmptyBox.visibility = View.INVISIBLE
+            binding.univPosts.visibility = View.VISIBLE
+            univPostsAdapter.submitList(univTempPosts)
+        }
 
         // 포스트 카테고리 리스트
         binding.univPostCategory.run {
@@ -131,8 +158,9 @@ class HomeFragment : Fragment() {
             onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                     val value = getItemAtPosition(p2).toString()
-                    Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
                 }
+
                 override fun onNothingSelected(p0: AdapterView<*>?) {
                     // 선택되지 않은 경우
                 }
@@ -144,11 +172,19 @@ class HomeFragment : Fragment() {
         departPostsAdapter.detailPostListener =
             object : DepartPostsAdapter.DetailPostListener {
                 override fun onClick(post: Post) {
-                    TODO("Not yet implemented")
+                    startActivity(Intent(context, PostDetailActivity::class.java))
                 }
             }
         binding.departPosts.adapter = departPostsAdapter
-        departPostsAdapter.submitList(tempPosts)
+        if (departTempPosts.isEmpty()) {
+            binding.departPostEmptyBox.visibility = View.VISIBLE
+            binding.departPosts.visibility = View.INVISIBLE
+        } else {
+            binding.departPostEmptyBox.visibility = View.INVISIBLE
+            binding.departPosts.visibility = View.VISIBLE
+            departPostsAdapter.submitList(departTempPosts)
+        }
+
 
         // 단과대 카테고리 리스트
         binding.ldepartCategory.run {
@@ -156,8 +192,9 @@ class HomeFragment : Fragment() {
             onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                     val value = getItemAtPosition(p2).toString()
-                    Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
                 }
+
                 override fun onNothingSelected(p0: AdapterView<*>?) {
                     // 선택되지 않은 경우
                 }
@@ -169,8 +206,9 @@ class HomeFragment : Fragment() {
             onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                     val value = getItemAtPosition(p2).toString()
-                    Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
                 }
+
                 override fun onNothingSelected(p0: AdapterView<*>?) {
                     // 선택되지 않은 경우
                 }
@@ -182,8 +220,9 @@ class HomeFragment : Fragment() {
             onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                     val value = getItemAtPosition(p2).toString()
-                    Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
                 }
+
                 override fun onNothingSelected(p0: AdapterView<*>?) {
                     // 선택되지 않은 경우
                 }
@@ -195,11 +234,18 @@ class HomeFragment : Fragment() {
         clubPostsAdapter.detailPostListener =
             object : ClubPostsAdapter.DetailPostListener {
                 override fun onClick(post: Post) {
-                    TODO("Not yet implemented")
+                    startActivity(Intent(context, PostDetailActivity::class.java))
                 }
             }
         binding.clubPosts.adapter = clubPostsAdapter
-        clubPostsAdapter.submitList(tempPosts)
+        if (clubTempPosts.isEmpty()) {
+            binding.clubPostEmptyBox.visibility = View.VISIBLE
+            binding.clubPosts.visibility = View.INVISIBLE
+        } else {
+            binding.clubPostEmptyBox.visibility = View.INVISIBLE
+            binding.clubPosts.visibility = View.VISIBLE
+            clubPostsAdapter.submitList(clubTempPosts)
+        }
 
         // 포스트 카테고리 리스트
         binding.clubPostCategory.run {
@@ -207,8 +253,9 @@ class HomeFragment : Fragment() {
             onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                     val value = getItemAtPosition(p2).toString()
-                    Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
                 }
+
                 override fun onNothingSelected(p0: AdapterView<*>?) {
                     // 선택되지 않은 경우
                 }

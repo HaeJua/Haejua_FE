@@ -1,15 +1,17 @@
 package com.example.eventra.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.eventra.R
 import com.example.eventra.databinding.ActivityMainBinding
+import com.example.eventra.ui.calendar.CalendarFragment
+import com.example.eventra.ui.favorite.FavoriteFragment
 import com.example.eventra.ui.home.HomeFragment
+import com.example.eventra.ui.myprofile.MyprofileFragment
 import com.example.eventra.ui.search.SearchFragment
 import com.example.eventra.viewmodel.MainViewModel
 import com.google.android.material.tabs.TabLayout
@@ -42,12 +44,15 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.favorite -> {
+                    supportFragmentManager.beginTransaction().replace(R.id.content, FavoriteFragment()).commit()
                     true
                 }
                 R.id.scedule -> {
+                    supportFragmentManager.beginTransaction().replace(R.id.content, CalendarFragment()).commit()
                     true
                 }
                 R.id.profile -> {
+                    supportFragmentManager.beginTransaction().replace(R.id.content, MyprofileFragment()).commit()
                     true
                 }
                 else -> false

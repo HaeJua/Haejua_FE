@@ -3,6 +3,7 @@ package com.example.eventra.ui.search
 import android.app.Activity
 import android.content.Context
 import android.content.Context.INPUT_METHOD_SERVICE
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,7 @@ import com.example.eventra.databinding.FragmentSearchBinding
 import com.example.eventra.model.Post
 import com.example.eventra.ui.adapter.SearchPostsAdapter
 import com.example.eventra.ui.adapter.SoaPostsAdapter
+import com.example.eventra.ui.home.PostDetailActivity
 import com.example.eventra.viewmodel.SearchViewModel
 
 class SearchFragment : Fragment() {
@@ -32,6 +34,9 @@ class SearchFragment : Fragment() {
         Post(4, "", "경북대학교 웹진 280호 발간"),
         Post(5, "", "호반우를 꾸며줘 당첨자 발표"),
         Post(6, "", "2025학년도 하계 및 2학기 현장실습교육과정 학생 모집 안내"),
+        Post(7, "", "경북대학교 웹진 280호 발간"),
+        Post(8, "", "호반우를 꾸며줘 당첨자 발표"),
+        Post(9, "", "2025학년도 하계 및 2학기 현장실습교육과정 학생 모집 안내"),
     )
     lateinit var binding: FragmentSearchBinding
     private val searchViewModel: SearchViewModel by viewModels()
@@ -71,7 +76,7 @@ class SearchFragment : Fragment() {
         soaPostsAdapter.detailPostListener =
             object : SoaPostsAdapter.DetailPostListener {
                 override fun onClick(post: Post) {
-                    TODO("Not yet implemented")
+                    startActivity(Intent(context, PostDetailActivity::class.java))
                 }
             }
         binding.stateOfArtPosts.adapter = soaPostsAdapter
@@ -82,7 +87,7 @@ class SearchFragment : Fragment() {
         searchPostsAdapter.detailPostListener =
             object : SearchPostsAdapter.DetailPostListener {
                 override fun onClick(post: Post) {
-                    TODO("Not yet implemented")
+                    startActivity(Intent(context, PostDetailActivity::class.java))
                 }
             }
         binding.searchPosts.run {

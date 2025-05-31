@@ -1,11 +1,13 @@
 package com.example.eventra.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.eventra.R
 import com.example.eventra.databinding.ActivityUnivMorePostBinding
 import com.example.eventra.model.Post
@@ -56,11 +58,21 @@ class UnivMorePostActivity : AppCompatActivity() {
         univPostsAdapter.detailPostListener =
             object : UnivPostsAdapter.DetailPostListener {
                 override fun onClick(post: Post) {
-                    TODO("Not yet implemented")
+                    startActivity(Intent(this@UnivMorePostActivity, PostDetailActivity::class.java))
                 }
             }
-        binding.univPosts.adapter = univPostsAdapter
-        univPostsAdapter.submitList(tempPosts)
+        binding.univPosts.apply {
+            layoutManager = GridLayoutManager(context, 3)
+            adapter = univPostsAdapter
+        }
+        if (tempPosts.isEmpty()) {
+            binding.univPostEmptyBox.visibility = View.VISIBLE
+            binding.univPosts.visibility = View.INVISIBLE
+        } else {
+            binding.univPostEmptyBox.visibility = View.INVISIBLE
+            binding.univPosts.visibility = View.VISIBLE
+            univPostsAdapter.submitList(tempPosts)
+        }
 
         // 포스트 카테고리 리스트
         binding.postCategory.apply {
@@ -68,7 +80,7 @@ class UnivMorePostActivity : AppCompatActivity() {
             onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                     val value = getItemAtPosition(p2).toString()
-                    Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, value, Toast.LENGTH_SHORT).show()
                 }
                 override fun onNothingSelected(p0: AdapterView<*>?) {
                     // 선택되지 않은 경우
