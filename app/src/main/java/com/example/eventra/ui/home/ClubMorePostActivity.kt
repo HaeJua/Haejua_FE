@@ -1,5 +1,6 @@
 package com.example.eventra.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -15,8 +16,6 @@ import com.example.eventra.ui.adapter.CategorySpinnerAdapter
 import com.example.eventra.ui.adapter.ClubPostsAdapter
 import com.example.eventra.ui.adapter.DepartPostsAdapter
 import com.example.eventra.viewmodel.ClubMorePostViewModel
-import com.example.eventra.viewmodel.DepartMorePostViewModel
-import com.example.eventra.viewmodel.UnivMorePostViewModel
 
 class ClubMorePostActivity : AppCompatActivity() {
 
@@ -61,7 +60,7 @@ class ClubMorePostActivity : AppCompatActivity() {
         clubPostsAdapter.detailPostListener =
             object : ClubPostsAdapter.DetailPostListener {
                 override fun onClick(post: Post) {
-                    TODO("Not yet implemented")
+                    startActivity(Intent(this@ClubMorePostActivity, PostDetailActivity::class.java))
                 }
             }
         binding.clubPosts.adapter = clubPostsAdapter

@@ -1,5 +1,6 @@
 package com.example.eventra.ui.favorite
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.eventra.databinding.FragmentFavoriteBinding
 import com.example.eventra.model.Post
 import com.example.eventra.ui.adapter.FavoritePostsAdapter
+import com.example.eventra.ui.home.PostDetailActivity
 
 class FavoriteFragment : Fragment() {
 
@@ -59,7 +61,7 @@ class FavoriteFragment : Fragment() {
         eventPostsAdapter.detailPostListener =
             object : FavoritePostsAdapter.DetailPostListener {
                 override fun onClick(post: Post) {
-                    TODO("Not yet implemented")
+                    startActivity(Intent(context, PostDetailActivity::class.java))
                 }
             }
         binding.eventPosts.adapter = eventPostsAdapter
@@ -77,7 +79,7 @@ class FavoriteFragment : Fragment() {
         partnershipPostsAdapter.detailPostListener =
             object : FavoritePostsAdapter.DetailPostListener {
                 override fun onClick(post: Post) {
-                    TODO("Not yet implemented")
+                    startActivity(Intent(context, PostDetailActivity::class.java))
                 }
             }
         binding.partnershipPosts.adapter = partnershipPostsAdapter
@@ -95,7 +97,7 @@ class FavoriteFragment : Fragment() {
         rentalPostsAdapter.detailPostListener =
             object : FavoritePostsAdapter.DetailPostListener {
                 override fun onClick(post: Post) {
-                    TODO("Not yet implemented")
+                    startActivity(Intent(context, PostDetailActivity::class.java))
                 }
             }
         binding.rentalPosts.adapter = rentalPostsAdapter
@@ -113,7 +115,7 @@ class FavoriteFragment : Fragment() {
         mtPostsAdapter.detailPostListener =
             object : FavoritePostsAdapter.DetailPostListener {
                 override fun onClick(post: Post) {
-                    TODO("Not yet implemented")
+                    startActivity(Intent(context, PostDetailActivity::class.java))
                 }
             }
         binding.mtPosts.adapter = mtPostsAdapter
@@ -131,7 +133,7 @@ class FavoriteFragment : Fragment() {
         festivalPostsAdapter.detailPostListener =
             object : FavoritePostsAdapter.DetailPostListener {
                 override fun onClick(post: Post) {
-                    TODO("Not yet implemented")
+                    startActivity(Intent(context, PostDetailActivity::class.java))
                 }
             }
         binding.festivalPosts.adapter = festivalPostsAdapter

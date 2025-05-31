@@ -1,5 +1,6 @@
 package com.example.eventra.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -70,7 +71,7 @@ class DepartMorePostActivity : AppCompatActivity() {
         departPostsAdapter.detailPostListener =
             object : DepartPostsAdapter.DetailPostListener {
                 override fun onClick(post: Post) {
-                    TODO("Not yet implemented")
+                    startActivity(Intent(this@DepartMorePostActivity, PostDetailActivity::class.java))
                 }
             }
         binding.departPosts.adapter = departPostsAdapter

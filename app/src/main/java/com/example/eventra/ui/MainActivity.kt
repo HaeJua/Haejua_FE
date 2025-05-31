@@ -8,6 +8,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.eventra.R
 import com.example.eventra.databinding.ActivityMainBinding
+import com.example.eventra.ui.calendar.CalendarFragment
 import com.example.eventra.ui.favorite.FavoriteFragment
 import com.example.eventra.ui.home.HomeFragment
 import com.example.eventra.ui.myprofile.MyprofileFragment
@@ -47,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.scedule -> {
+                    supportFragmentManager.beginTransaction().replace(R.id.content, CalendarFragment()).commit()
                     true
                 }
                 R.id.profile -> {

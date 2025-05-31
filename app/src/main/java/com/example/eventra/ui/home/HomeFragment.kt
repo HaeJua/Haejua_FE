@@ -139,7 +139,7 @@ class HomeFragment : Fragment() {
         univPostsAdapter.detailPostListener =
             object : UnivPostsAdapter.DetailPostListener {
                 override fun onClick(post: Post) {
-                    TODO("Not yet implemented")
+                    startActivity(Intent(context, PostDetailActivity::class.java))
                 }
             }
         binding.univPosts.adapter = univPostsAdapter
@@ -172,7 +172,7 @@ class HomeFragment : Fragment() {
         departPostsAdapter.detailPostListener =
             object : DepartPostsAdapter.DetailPostListener {
                 override fun onClick(post: Post) {
-                    TODO("Not yet implemented")
+                    startActivity(Intent(context, PostDetailActivity::class.java))
                 }
             }
         binding.departPosts.adapter = departPostsAdapter
@@ -234,7 +234,7 @@ class HomeFragment : Fragment() {
         clubPostsAdapter.detailPostListener =
             object : ClubPostsAdapter.DetailPostListener {
                 override fun onClick(post: Post) {
-                    TODO("Not yet implemented")
+                    startActivity(Intent(context, PostDetailActivity::class.java))
                 }
             }
         binding.clubPosts.adapter = clubPostsAdapter
